@@ -1,0 +1,20 @@
+﻿@using Booklette.Models
+@model ReaderModel
+
+
+<div class="reader-placeholder-top">
+    <h3 class="logo">Booklette</h3>
+</div>
+    <div class="reader-nav turn-left"> 
+        @if (Model.Page.Order > 1) {
+            <a href="@Url.Action("PrevPage", "Reader", new { id = Model.Page.BID })"></a>
+        }
+    </div>
+    <div class="reader-nav turn-right">
+        <a href="@Url.Action("NextPage", "Reader", new { id = Model.Page.BID })"></a>
+    </div>
+    <div class="reader-content">
+            @Html.Raw(Model.Page.Content)
+    </div>
+
+    

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Booklette - Shelf";
+}
+@using Booklette.Models
+@model ShelfModel
+
+@{Html.RenderPartial("_menu");}
+
+<div class="container-fluid">
+    <br />
+    <div class="row">
+
+        @foreach (var book in Model.Books)
+        {
+            <div class="col-sm-6 col-md-2">
+                <div class="thumbnail">
+                    <img data-src="holder.js/100%x150" alt="100%x200" src="" style="height: 200px; width: 100%; display: block;">
+                    <div class="caption" style="text-align:center;">
+                        <h3>@book.Title</h3>
+                        <p>@book.Author</p>
+                        <p><a href="@Url.Action("Book", "Reader", new { id=book.Id })" class="btn btn-primary" role="button" style="width:100%;">Read</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+        
+</div>

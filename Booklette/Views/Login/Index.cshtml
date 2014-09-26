@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Booklette - Login";
+}
+@using Booklette.Models;
+@model LoginModel
+
+<form class="form-signin" data-container="#container" method="post" action="/">
+    <h2 class="form-signin-heading logo">Booklette</h2>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control email-input", @placeholder="Email" })
+    @Html.TextBoxFor(x => x.Password, new {@type="password", @class = "form-control email-password", @placeholder="Password"})
+    <p>
+        <a href="@Url.Action("Index","Registration")">Registration</a>
+    </p>
+    <input type="submit" class="btn btn-primary" value="Log in">
+</form>
